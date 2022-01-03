@@ -1,0 +1,26 @@
+/*  Reverse ListNode without creating new ListNode
+            head->1->2->3->4->5->null
+            필요한 것 (앞 노드-> 현재노드 -> 다음노드)
+            
+            1. 다음노드 = 현재노드 -> next
+            2. 현재노드 -> next = 앞노드
+            3. 앞노드 = 현재노드
+            4. 현재노드 = 다음노드
+            
+            현재노드가 null이 될 때까지 반복한 후, 현재노드가 null 이면, 그 앞노드가 head가 되기 때문에 앞노드를 반환
+*/
+
+class Solution {
+    public ListNode reverseList(ListNode head) {
+        
+        ListNode prev = null, curr = head, next;
+        
+        while(curr!=null) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }  
+        return prev; 
+    }
+}
