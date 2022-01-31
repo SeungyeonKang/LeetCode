@@ -1,0 +1,20 @@
+class Solution {
+    public int firstUniqChar(String s) {
+        // leetcode
+        // TimeComplexity : O(2n) = O(n)
+        // Space Comoplexity : O(28) = O(1)
+        int[] alpha = new int[28];
+        for(int i=0; i<s.length(); i++) {
+            alpha[s.charAt(i)-'a']++;
+        } //O(n)
+        
+        int result = 0;
+        for(int i=0; i<s.length(); i++){
+            if(alpha[s.charAt(i)-'a']==1) {
+                result = i;
+                return i;
+            }
+        } //O(n)
+        return -1;
+    }
+}
