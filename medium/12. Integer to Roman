@@ -1,0 +1,24 @@
+class Solution {
+    public String intToRoman(int num) {
+        // I+V, I+X 4,9
+        // X+L, X+C 40,90
+        // C+D, C+M 400,900
+        // M, CM, D, CD, C, XC, L XL, X, IX, V, IV, I
+        //Time Complexity : O(n);
+        int[] roman = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+        String[] numerals = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+        
+         StringBuilder result = new StringBuilder();
+        for(int i=0; i<13; i++){
+            int tmp = num/roman[i];
+            num = num%roman[i];
+            while(tmp>0) {
+                result.append(numerals[i]);
+                tmp--;
+            }
+        }
+        
+        return result.toString(); 
+    }
+
+}
