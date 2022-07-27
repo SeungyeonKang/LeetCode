@@ -18,8 +18,8 @@ class Solution {
         Find Node p and q in the tree.
         Find the LCA of the two nodes.
         
-        TC : O(H) : height of the tree
-        SC : O(1)
+        TC : O(n) : height of the tree
+        SC : O(n)
         */
         
         //Recursive
