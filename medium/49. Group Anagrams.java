@@ -1,6 +1,5 @@
 class Solution {
-   //TC : O(n)
-   //SC : O(n)
+   //TC : O(nmlogm)
     public List<List<String>> groupAnagrams(String[] strs) {
         Map<String, List<String>> map = new HashMap<>();
         
